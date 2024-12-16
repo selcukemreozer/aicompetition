@@ -95,6 +95,9 @@ history = model.fit(
     validation_steps=val_generator.n // val_generator.batch_size
 )
 
+# 6. Modeli Kaydetme
+model.save('resnet50_city_classifier.h5')
+
 # 5. Performans Görselleştirme
 plt.plot(history.history['accuracy'], label='Train Accuracy')
 plt.plot(history.history['val_accuracy'], label='Validation Accuracy')
@@ -103,6 +106,3 @@ plt.title('Model Accuracy')
 plt.xlabel('Epoch')
 plt.ylabel('Accuracy')
 plt.show()
-
-# 6. Modeli Kaydetme
-model.save('resnet50_city_classifier.h5')
